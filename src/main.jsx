@@ -2,7 +2,7 @@ import './index.css'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 // 1. Importamos los componentes de navegación
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Login from './login/Login.jsx';
 import Registro from './registro/Registro.jsx';
@@ -14,7 +14,7 @@ import CheckoutPreview from "./components/organisms/CheckoutPreview";
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* 2. El BrowserRouter maneja la URL. El basename es vital para GitHub Pages */}
-    <Router>
+    <BrowserRouter basename="/Reto_fullstack">
       
       {/* El Header se queda afuera de Routes para que sea persistente en toda la web */}
       <Header />
@@ -33,6 +33,6 @@ createRoot(document.getElementById('root')).render(
         </Routes>
       </main>
 
-    </Router>
+    </BrowserRouter>
   </StrictMode>,
 )
