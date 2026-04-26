@@ -8,9 +8,11 @@ export const useProductStore = create((set) => ({
 
   setSearchTerm: (term) =>
     set((state) => {
-      const filtered = state.products.filter((product) =>
-        product.name.toLowerCase().includes(term.toLowerCase())
-      );
+      const filtered = state.products.filter(
+  (product) =>
+    product.name.toLowerCase().includes(term.toLowerCase()) ||
+    product.description.toLowerCase().includes(term.toLowerCase())
+);
 
       return {
         searchTerm: term,

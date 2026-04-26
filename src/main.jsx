@@ -5,9 +5,11 @@ import Login from './login/Login.jsx';
 import Registro from './registro/Registro.jsx';
 import ProductGallery from "./components/organisms/ProductGallery";
 import ShoppingCart from "./components/organisms/ShoppingCart";
+import Header from "./components/organisms/Header";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ShoppingCart />
+    <Header />
+    <ProductGallery />
   </StrictMode>,
 )
