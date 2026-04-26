@@ -1,39 +1,23 @@
-// Un componente de React funcional y moderno que usa Tailwind CSS v4.0
 function Title({ title }) {
   return (
-    // Contenedor principal para centrar el contenido en la página
-    <div className="min-h-screen flex items-center justify-center bg-white p-4">
-      {/* Contenedor del texto con espaciado vertical */}
-      <div className="flex flex-col items-center gap-1">
-        {/* Título: "Retreats Coming" */}
-        <h1 className="
-          /* Tipografía */
-          text-4xl md:text-5xl lg:text-6xl
-          font-medium
-          tracking-tight
-          
-          /* Color del texto (Azul Marino Profundo) */
-          text-[color:#092556]
-          
-          /* Espaciado */
-          mb-1
-        ">
+    <section className="bg-[#F8F5F0] px-6 md:px-12 py-20 md:py-28 text-center">
+      <div className="max-w-4xl mx-auto">
+        <p className="text-sm uppercase tracking-[0.3em] text-[#8A7F73] mb-4">
+          Colección Exclusiva
+        </p>
+
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-[#1F1F1F] leading-tight">
           {title}
         </h1>
 
-        {/* Separador: Una línea horizontal fina */}
-        <div className="
-          /* Dimensiones */
-          w-16 h-px
-          
-          /* Color de fondo (Gris claro) */
-          bg-stone-300
-          
-          /* Margen superior para separación */
-          mt-2
-        "></div>
+        <div className="w-20 h-px bg-[#CFC5B7] mx-auto my-8"></div>
+
+        <p className="text-base md:text-lg text-[#6B6B6B] max-w-2xl mx-auto leading-relaxed">
+          Diseño atemporal, materiales nobles y una selección pensada para elevar tu espacio cotidiano.
+        </p>
       </div>
-    </div>
+    </section>
   );
 }
+
 export default Title;
