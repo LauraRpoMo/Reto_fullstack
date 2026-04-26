@@ -56,9 +56,26 @@ export const useCartStore = create(
             total: updatedTotal,
           };
         }),
+      clearItem: (productId) =>
+        set((state) => {
+          const updatedCart = state.cartItems.filter(
+            (item) => item.id !== productId
+          );
+
+          const updatedTotal = updatedCart.reduce(
+            (sum, item) => sum + item.price * item.quantity,
+            0
+          );
+
+          return {
+            cartItems: updatedCart,
+            total: updatedTotal,
+          };
+        }),
     }),
     {
       name: "cart-storage",
     }
   )
-);
+);  
+ 
