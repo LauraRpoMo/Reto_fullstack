@@ -13,7 +13,7 @@ createRoot(document.getElementById('root')).render(
     {/* <Login /> */}
     {/* <Registro /> */}
     <Header />
-    {/* <ProductGallery /> */}
+    <ProductGallery />
     {/* <ShoppingCart /> */}
     <CheckoutPreview />
   </StrictMode>,
