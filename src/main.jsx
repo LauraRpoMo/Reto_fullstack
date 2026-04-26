@@ -12,9 +12,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <Login />  */}
     <Registro />
-    {/* <Header />
+    <Header />
     <ProductGallery />
     <ShoppingCart />
-    <CheckoutPreview /> */}
+    <CheckoutPreview /> 
   </StrictMode>,
 )
