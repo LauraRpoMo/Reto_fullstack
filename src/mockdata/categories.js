@@ -21,6 +21,8 @@ export const mockCategories = [
   }
 ];
 
+/* Prueba alternativa de categorias
+
 import React from 'react';
 
 const CategoryFilters = ({ activeCategory, setActiveCategory }) => {
@@ -55,4 +57,4 @@ const CategoryFilters = ({ activeCategory, setActiveCategory }) => {
   );
 };
 
-export default CategoryFilters;
+export default CategoryFilters;*/

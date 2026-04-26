@@ -22,22 +22,17 @@ function Header() {
         </div>
 
         <nav className="flex flex-wrap justify-center gap-6 text-sm uppercase tracking-wide text-[#4D4D4D]">
-          <a href="#" className="hover:text-[#B89B72] transition">
-            Inicio
-          </a>
-          <a href="#" className="hover:text-[#B89B72] transition">
-            Colección
-          </a>
-          <a href="#" className="hover:text-[#B89B72] transition">
-            Carrito
-          </a>
+          <a href="#" className="hover:text-[#B89B72] transition">Inicio</a>
+          <a href="#" className="hover:text-[#B89B72] transition">Colección</a>
+          <a href="#" className="hover:text-[#B89B72] transition">Carrito</a>
         </nav>
 
         <div className="w-full lg:w-auto flex flex-col md:flex-row items-center gap-4">
           <input
             type="text"
             placeholder="Buscar en Borau..."
-            value={searchTerm}
+            // Esto ahora funcionará si tu store tiene definido setSearchTerm
+            value={searchTerm || ""} 
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full md:w-72 px-4 py-3 bg-white border border-[#DDD6CB] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#B89B72]"
           />
@@ -45,9 +40,7 @@ function Header() {
           <div className="flex items-center gap-3 text-sm">
             {currentUser ? (
               <>
-                <span className="text-[#4D4D4D]">
-                  Hola, {currentUser.name}
-                </span>
+                <span className="text-[#4D4D4D]">Hola, {currentUser.name}</span>
                 <button
                   onClick={logoutUser}
                   className="px-4 py-2 border border-[#1F1F1F] rounded-full hover:bg-[#1F1F1F] hover:text-white transition"
@@ -56,9 +49,16 @@ function Header() {
                 </button>
               </>
             ) : (
-              <span className="text-[#8A7F73]">
-                Invitado
-              </span>
+              /* CAMBIO AQUÍ: Añadimos un botón de Login en lugar de solo texto */
+              <div className="flex items-center gap-3">
+                <span className="text-[#8A7F73] uppercase tracking-widest text-[10px]">Invitado</span>
+                <a 
+                  href="/login" 
+                  className="px-4 py-2 bg-[#1F1F1F] text-white rounded-full border border-[#1F1F1F] hover:bg-transparent hover:text-[#1F1F1F] transition"
+                >
+                  Entrar
+                </a>
+              </div>
             )}
           </div>
         </div>
