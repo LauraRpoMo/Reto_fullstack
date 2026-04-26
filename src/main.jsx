@@ -6,10 +6,10 @@ import Registro from './registro/Registro.jsx';
 import ProductGallery from "./components/organisms/ProductGallery";
 import ShoppingCart from "./components/organisms/ShoppingCart";
 import Header from "./components/organisms/Header";
+import CheckoutPreview from "./components/organisms/CheckoutPreview";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Header />
-    <ProductGallery />
+    <CheckoutPreview />
   </StrictMode>,
 )
