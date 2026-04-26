@@ -21,7 +21,7 @@ const ShoppingCart = () => {
             {cartItems.map((item) => (
               <div
                 key={item.id}
-                className="flex items-center justify-between bg-white shadow rounded-2xl p-4"
+                className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 shadow rounded-2xl p-4"
               >
                 <div>
                   <h3 className="font-semibold">{item.name}</h3>
