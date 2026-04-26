@@ -11,56 +11,91 @@ const CheckoutPreview = () => {
   };
 
   return (
-    <section className="max-w-4xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-6">Resumen de Compra</h2>
-
-      <div className="bg-white rounded-2xl shadow p-6 mb-6">
-        <h3 className="text-xl font-semibold mb-4">Datos del Usuario</h3>
-
-        {currentUser ? (
-          <>
-            <p><strong>Nombre:</strong> {currentUser.name}</p>
-            <p><strong>Email:</strong> {currentUser.email}</p>
-          </>
-        ) : (
-          <p>No hay usuario logueado.</p>
-        )}
+    <section className="px-6 md:px-12 py-12 max-w-4xl mx-auto">
+      <div className="mb-10">
+        <h2 className="font-serif text-3xl tracking-wide text-[#1F1F1F]">
+          Resumen de compra
+        </h2>
+        <p className="text-xs uppercase tracking-[0.25em] text-[#8A7F73] mt-1">
+          Revisa tu pedido
+        </p>
       </div>
 
-      <div className="bg-white rounded-2xl shadow p-6 mb-6">
-        <h3 className="text-xl font-semibold mb-4">Productos</h3>
+      <div className="space-y-6">
 
-        {cartItems.length > 0 ? (
-          cartItems.map((item) => (
-            <div
-              key={item.id}
-              className="flex justify-between border-b py-3"
-            >
-              <span>
-                {item.name} x{item.quantity}
-              </span>
-              <span>
-                ${(item.price * item.quantity).toFixed(2)}
-              </span>
+        <div className="border border-[#E8E2D8] p-6">
+          <p className="text-xs uppercase tracking-[0.25em] text-[#8A7F73] mb-4">
+            Datos del cliente
+          </p>
+          {currentUser ? (
+            <div className="space-y-2">
+              <div className="flex justify-between items-baseline border-b border-[#E8E2D8] pb-3">
+                <span className="text-xs uppercase tracking-[0.15em] text-[#8A7F73]">Nombre</span>
+                <span className="font-serif text-[#1F1F1F]">{currentUser.name}</span>
+              </div>
+              <div className="flex justify-between items-baseline pt-1">
+                <span className="text-xs uppercase tracking-[0.15em] text-[#8A7F73]">Email</span>
+                <span className="text-sm text-[#6B6B6B]">{currentUser.email}</span>
+              </div>
             </div>
-          ))
-        ) : (
-          <p>Tu carrito está vacío.</p>
-        )}
-      </div>
+          ) : (
+            <p className="text-sm text-[#8A7F73] tracking-wide">
+              No hay usuario logueado.
+            </p>
+          )}
+        </div>
 
-      <div className="text-right">
-        <h3 className="text-2xl font-bold mb-4">
-          Total: ${total.toFixed(2)}
-        </h3>
+        <div className="border border-[#E8E2D8] p-6">
+          <p className="text-xs uppercase tracking-[0.25em] text-[#8A7F73] mb-4">
+            Productos
+          </p>
+          {cartItems.length > 0 ? (
+            <div className="divide-y divide-[#E8E2D8]">
+              {cartItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex justify-between items-baseline py-4"
+                >
+                  <div>
+                    <span className="font-serif text-[#1F1F1F] tracking-wide">
+                      {item.name}
+                    </span>
+                    <span className="text-xs text-[#8A7F73] ml-2">
+                      x{item.quantity}
+                    </span>
+                  </div>
+                  <span className="text-sm text-[#6B6B6B]">
+                    ${(item.price * item.quantity).toFixed(2)}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-sm text-[#8A7F73] tracking-wide">
+              Tu carrito está vacío.
+            </p>
+          )}
+        </div>
 
-        <button
-          onClick={handleConfirmPurchase}
-          disabled={cartItems.length === 0}
-          className="px-6 py-3 bg-black text-white rounded-xl disabled:opacity-50"
-        >
-          Confirmar Compra
-        </button>
+        <div className="border-t border-[#E8E2D8] pt-6 flex justify-between items-baseline">
+          <p className="text-xs uppercase tracking-[0.25em] text-[#8A7F73]">
+            Total
+          </p>
+          <span className="font-serif text-3xl text-[#1F1F1F]">
+            ${total.toFixed(2)}
+          </span>
+        </div>
+
+        <div className="text-right">
+          <button
+            onClick={handleConfirmPurchase}
+            disabled={cartItems.length === 0}
+            className="px-8 py-3 text-xs uppercase tracking-[0.2em] bg-[#1F1F1F] text-white hover:bg-[#B89B72] transition duration-300 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-[#1F1F1F]"
+          >
+            Confirmar compra
+          </button>
+        </div>
+
       </div>
     </section>
   );
