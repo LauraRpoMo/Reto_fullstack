@@ -10,11 +10,11 @@ import CheckoutPreview from "./components/organisms/CheckoutPreview";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <Login /> */}
-    {/* <Registro /> */}
+    <Login /> 
+    <Registro />
     <Header />
     <ProductGallery />
-    {/* <ShoppingCart /> */}
+    <ShoppingCart />
     <CheckoutPreview />
   </StrictMode>,
 )

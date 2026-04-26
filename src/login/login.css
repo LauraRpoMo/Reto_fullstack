@@ -1,3 +1,118 @@
-#contenedor{
-    background-color: chocolate;
+/* login.css */
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F8F5F0; /* Fondo solicitado */
+  padding: 1.5rem; /* py-6 */
+}
+
+.login-card {
+  width: 100%;
+  max-width: 450px;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E2D8; /* Borde solicitado */
+  border-radius: 1.5rem;
+  padding: 1.5rem 1.5rem; /* px-6 py-6 */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* gap-6 */
+}
+
+/* Media query para espaciado generoso en desktop (md:px-12) */
+@media (min-width: 768px) {
+  .login-card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.login-title {
+  font-family: serif; /* font-serif */
+  font-size: 2.25rem;
+  letter-spacing: 0.05em; /* tracking-wide */
+  color: #1F1F1F;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.login-subtitle {
+  color: #8A7F73;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* gap-6 */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.75rem;
+  text-transform: uppercase; /* uppercase */
+  letter-spacing: 0.25em; /* tracking-[0.25em] */
+  color: #8A7F73; /* Color secundario */
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px; /* rounded-full */
+  border: 1px solid #DDD6CB; /* Borde input */
+  background-color: transparent;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #B89B72; /* focus ring */
+  box-shadow: 0 0 0 2px rgba(184, 155, 114, 0.2);
+}
+
+.login-link {
+  color: #4D4D4D; /* Link base */
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.login-link:hover {
+  color: #B89B72; /* Hover link */
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.875rem;
+  border-radius: 9999px; /* rounded-full */
+  border: 1px solid #1F1F1F; /* Borde botón */
+  background-color: transparent;
+  color: #1F1F1F;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.login-button:hover {
+  background-color: #1F1F1F; /* Hover invertido */
+  color: #FFFFFF;
+}
+
+.register-prompt {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #8A7F73;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
 }
